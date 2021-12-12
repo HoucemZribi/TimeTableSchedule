@@ -201,3 +201,187 @@ salle(S, N) :- salle(S, N, _). % TODO add tests
 accueille(S, T) :-
     salle(S, _, L),
     member(T, L).
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                  Séances                                     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+/*
+ * seances(?Nom, ?Mat, ?Prof, ?Type, ?Groupe, ?Ids).
+ *
+ * Définition de plusieurs séances à la volée
+ *
+ * @arg Nom     Nom des séances
+ * @arg Mat     Id Matière
+ * @arg Prof    Id Prof
+ * @arg Type    Type de cours
+ * @arg Groupe  Id Groupe
+ * @arg Ids     Liste d'atomes servant d'ids pour ces séances
+ */
+
+
+% mrsim1 %
+% AI %
+
+
+seances('CM AI', ai, salwa_said, cm, mrsim1, [
+    cm_ai1_1, cm_ai1_2, cm_ai1_3, cm_ai1_4, cm_ai1_5
+]).
+
+seances('CM AI', ai, salwa_said, cm, mrsim1, [
+    cm_ai1_1, cm_ai1_2, cm_ai1_3, cm_ai1_4, cm_ai1_5
+]).
+
+seances('TD AI Groupe 1', ai, salwa_said, td, mrsim1_1, [
+    td_ai1_1_1, td_ai1_1_2, td_ai1_1_3, td_ai1_1_4, td_ai1_1_5
+]).
+
+seances('TD AI Groupe 2', ai, salwa_said, td, mrsim1_2, [
+    td_ai1_2_1, td_ai1_2_2, td_ai1_2_3, td_ai1_2_4, td_ai1_2_5
+]).
+
+seances('DS AI', ai, salwa_said, ds, mrsim1, [
+    ds_ai1
+]).
+
+
+% Proba %
+
+seances('CM Proba', proba, mariem_farhat, cm, mrsim1, [
+    cm_proba_1, cm_proba_2, cm_proba_3, cm_proba_4, cm_proba_5
+]).
+
+seances('TD Proba Groupe 1', proba, mariem_farhat, td, mrsim1_1, [
+    td_proba_1_1, td_proba_1_2, td_proba_1_3, td_proba_1_4, td_proba_1_5
+]).
+
+seances('TD Proba Groupe 2', proba, mariem_farhat, td, mrsim1_2, [
+    td_proba_2_1, td_proba_2_2, td_proba_2_3, td_proba_2_4, td_proba_2_5
+]).
+
+seances('DS Proba', proba, mariem_farhat, ds, mrsim1, [
+    ds_proba
+]).
+
+
+% ri %
+
+seances('CM ri', ri, rafik_abbes, cm, mrsim1, [
+    cm_ri_1, cm_ri_2, cm_ri_3, cm_ri_4, cm_ri_5
+]).
+
+seances('TD ri Groupe 1', ri, rafik_abbes, td, mrsim1_1, [
+    td_ri_1_1, td_ri_1_2, td_ri_1_3, td_ri_1_4, td_ri_1_5
+]).
+
+seances('TD ri Groupe 2',ri, rafik_abbes, td, mrsim1_2, [
+    td_ri_2_1, td_ri_2_2, td_ri_2_3, td_ri_2_4, td_ri_2_5
+]).
+
+seances('DS ri', ri, rafik_abbes, ds, mrsim1, [
+    ds_ri
+]).
+
+
+% Graphes %
+
+seances('CM Graphes', graphes, imen_matoui, cm, mrsim1, [
+    cm_graphe_1, cm_graphe_2, cm_graphe_3, cm_graphe_4, cm_graphe_5
+]).
+
+seances('TD Graphes Groupe 1', graphes, imen_matoui, td, mrsim1_1, [
+    td_graphe_1_1, td_graphe_1_2, td_graphe_1_3, td_graphe_1_4, td_graphe_1_5
+]).
+
+seances('TD Graphes Groupe 2', graphes, imen_matoui, td, mrsim1_2, [
+    td_graphe_2_1, td_graphe_2_2, td_graphe_2_3, td_graphe_2_4, td_graphe_2_5
+]).
+
+seances('DS Graphes', graphes, imen_matoui, ds, mrsim1, [
+    ds_graphe
+]).
+
+
+
+% Architecture %
+
+seances('CM Architecture', architecture, amira_zrelli, cm, mrsim1, [
+    cm_arch_1, cm_arch_2, cm_arch_3, cm_arch_4, cm_arch_5
+]).
+
+seances('TD Architecture Groupe 1', architecture, amira_zrelli, td, mrsim1_1, [
+    td_arch_1_1, td_arch_1_2, td_arch_1_3, td_arch_1_4, td_arch_1_5
+]).
+
+seances('TD Architecture Groupe 2', architecture, amira_zrelli, td, mrsim1_2, [
+    td_arch_2_1, td_arch_2_2, td_arch_2_3, td_arch_2_4, td_arch_2_5
+]).
+
+seances('DS Architecture', architecture, amira_zrelli, ds, mrsim1, [
+    ds_arch
+]).
+
+
+
+% Logic Floue %
+
+seances('CM Logic Floue', logic, lotfi_tlig, cm, mrsim1, [
+    cm_flou1_1, cm_flou1_2, cm_flou1_3, cm_flou1_4, cm_flou1_5
+]).
+
+seances('TD Logic Floue Groupe 1', logic, lotfi_tlig, td, mrsim1_1, [
+    td_flou1_1_1, td_flou1_1_2, td_flou1_1_3, td_flou1_1_4, td_flou1_1_5
+]).
+
+seances('TD Logic Floue Groupe 2', logic, lotfi_tlig, td, mrsim1_2, [
+    td_flou1_2_1, td_flou1_2_2, td_flou1_2_3, td_flou1_2_4, td_flou1_2_5
+]).
+
+
+
+seances('DS Logic Floue', logic, lotfi_tlig, ds, mrsim1, [
+    ds_flou1
+]).
+
+
+% Francais %
+
+seances('CM fr', c, fawzi_harrathi, cm, mrsim1, [
+    cm_fr_1, cm_fr_2, cm_fr_3, cm_fr_4, cm_fr_5
+]).
+
+
+
+seances('DS fr', c, fawzi_harrathi, ds, mrsim1, [
+    ds_fr
+]).
+
+
+% Algo %
+
+seances('CM Algo', algo, jassem_mtimet, cm, mrsim1, [
+    cm_algo_1, cm_algo_2, cm_algo_3, cm_algo_4, cm_algo_5
+]).
+
+seances('TD Algo Groupe 1', algo, jassem_mtimet, td, mrsim1_1, [
+    td_algo_1_1, td_algo_1_2, td_algo_1_3, td_algo_1_4, td_algo_1_5
+]).
+
+seances('TD Algo Groupe 2', algo, jassem_mtimet, td, mrsim1_2, [
+    td_algo_2_1, td_algo_2_2, td_algo_2_3, td_algo_2_4, td_algo_2_5
+]).
+
+seances('DS Algo', algo, jassem_mtimet, ds, mrsim1, [
+    ds_algo
+]).
+
+
+% ang%
+
+seances('CM ang', ang, mohamed_nouasria, cm, mrsim1, [
+    cm_ang_1, cm_ang_2, cm_ang_3, cm_ang_4, cm_ang_5
+]).
+
+
+seances('DS ang', ang, mohamed_nouasria, ds, mrsim1, [
+    ds_ang
+]).
