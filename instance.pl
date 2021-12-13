@@ -385,3 +385,203 @@ seances('CM ang', ang, mohamed_nouasria, cm, mrsim1, [
 seances('DS ang', ang, mohamed_nouasria, ds, mrsim1, [
     ds_ang
 ]).
+/**
+ * seance(?Id, ?TypeCours, ?Matiere, ?Nom)
+ *
+ * @arg Id          Id de la séance
+ * @arg TypeCours   Type de cours de la séance
+ * @arg Matiere     Matiere à laquelle la séance appartient
+ * @arg Nom         Nom de la séance
+*/
+:- dynamic seance/4.
+
+/**
+ * groupeSeance(?Groupe, ?Seance)
+ *
+ * Définit la participation d'un groupe à une séance
+ *
+ * @arg Groupe      Nom du groupe
+ * @arg Seance      Id de la séance
+ */
+:- dynamic groupeSeance/2.
+
+/**
+ * profSeance(?Prof, ?Seance)
+ *
+ * Définit la participation d'un enseignant à une séance
+ *
+ * @arg Prof        Nom de l'enseignant
+ * @arg Seance      Id de la séance
+ */
+:- dynamic profSeance/2.
+
+/**
+ * suitSeance(+Seance_suivante, ?Seance_suivie)
+ *
+ * On remarque que le prédicat nous permet également d'implémenter la relation
+ * de suite entre les matière (dernière séance matière 1 - première séance
+ * matière 2)
+ *
+ * @arg Seance_suivante     Id de la séance qui suit
+ * @arg Seance_suivie       Id de la séance suivit
+ */
+
+ /**
+ * suitSeance(?Seance_suivante, ?Seance_suivie, ?tempsMin, ?tempsMax)
+ *
+ * @arg Seance_suivante     Id de la séance qui suit
+ * @arg Seance_suivie       Id de la séance suivit
+ * @arg tempsMin            Nombre de jours min avant la prochaine séance
+ * @arg tempsMax            Nombre de jours max avant la prochaine séance
+ */
+
+:- dynamic suitSeance/2.
+:- dynamic suitSeance/4.
+
+%
+%suitSeance mrsim1%
+%
+suitSeance(cm_ai2_1, cm_ai1_5, 28, 35).
+suitSeance(cm_ang_1, cm_ai1_5, 28, 35).
+suitSeance(cm_reseau_1, cm_ai1_5, 28, 35).
+
+
+suitSeance(cm_ai2_1, cm_ri_5, 28, 35).
+suitSeance(cm_ang_1, cm_ri_5, 28, 35).
+suitSeance(cm_reseau_1, cm_ri_5, 28, 35).
+
+
+suitSeance(cm_ai2_1, cm_proba_5, 28, 35).
+suitSeance(cm_ang_1, cm_proba_5, 28, 35).
+suitSeance(cm_reseau_1, cm_proba_5, 28, 35).
+
+suitSeance(cm_ai2_1, cm_proba_5, 28, 35).
+suitSeance(cm_ang_1, cm_proba_5, 28, 35).
+suitSeance(cm_reseau_1, cm_proba_5, 28, 35).
+
+
+suitSeance(cm_ai2_1, cm_flou1_5, 28, 35).
+suitSeance(cm_ang_1, cm_flou1_5, 28, 35).
+suitSeance(cm_reseau_1, cm_flou1_5, 28, 35).
+
+
+suitSeance(cm_ai2_1, cm_arch_5, 28, 35).
+suitSeance(cm_ang_1, cm_arch_5, 28, 35).
+suitSeance(cm_reseau_1, cm_arch_5, 28, 35).
+
+
+suitSeance(cm_ai2_1, cm_fr_5, 28, 35).
+suitSeance(cm_ang_1, cm_fr_5, 28, 35).
+
+
+suitSeance(cm_ai2_1, cm_algo_5, 28, 35).
+suitSeance(cm_ang_1, cm_algo_5, 28, 35).
+
+
+%DS mrsim1 suitSeance%
+suitSeance(ds_ai1, td_ai1_2_5, 7, 14).
+suitSeance(ds_ai1, td_ai1_1_5, 7, 14).
+suitSeance(ds_ri, td_ri_1_5, 7, 14).
+suitSeance(ds_ri, td_ri_2_5, 7, 14).
+suitSeance(ds_proba, td_proba_2_5, 7, 14).
+suitSeance(ds_proba, td_proba_1_5, 7, 14).
+suitSeance(ds_proba, td_proba_1_5, 7, 14).
+suitSeance(ds_proba, td_proba_2_5, 7, 14).
+suitSeance(ds_flou1, td_flou1_2_5, 7, 14).
+suitSeance(ds_flou1, td_flou1_1_5, 7, 14).
+suitSeance(ds_arch, td_arch_2_5, 7, 14).
+suitSeance(ds_arch, td_arch_1_5, 7, 14).
+suitSeance(ds_algo, td_algo_2_5, 7, 14).
+suitSeance(ds_algo, td_algo_1_5, 7, 14).
+
+suitSeance(ds_ang, td_ang_2_5, 7, 14).
+suitSeance(ds_ang, td_ang_1_5, 7, 14).
+suitSeance(ds_ai2, td_ai2_2_5, 7, 14).
+suitSeance(ds_ai2, td_ai2_1_5, 7, 14).
+suitSeance(ds_reseau, td_reseau_2_5, 7, 14).
+suitSeance(ds_reseau, td_reseau_1_5, 7, 14).
+
+
+
+%ai2 mrsim1 S6%
+suitSeance(cm_ai2_2, cm_ai2_1, 1, 10).
+suitSeance(cm_ai2_3, cm_ai2_2, 1, 10).
+suitSeance(cm_ai2_4, cm_ai2_3, 1, 10).
+suitSeance(cm_ai2_5, cm_ai2_4, 1, 10).
+
+suitSeance(td_ai2_1_1, cm_ai2_1, 1, 10).
+suitSeance(td_ai2_1_2, cm_ai2_2, 1, 10).
+suitSeance(td_ai2_1_3, cm_ai2_3, 1, 10).
+suitSeance(td_ai2_1_4, cm_ai2_4, 1, 10).
+suitSeance(td_ai2_1_5, cm_ai2_5, 1, 10).
+
+suitSeance(td_ai2_2_1, cm_ai2_1, 1, 10).
+suitSeance(td_ai2_2_2, cm_ai2_2, 1, 10).
+suitSeance(td_ai2_2_3, cm_ai2_3, 1, 10).
+suitSeance(td_ai2_2_4, cm_ai2_4, 1, 10).
+suitSeance(td_ai2_2_5, cm_ai2_5, 1, 10).
+
+
+%reseau mrsim1 S6%
+
+suitSeance(cm_reseau_2, cm_reseau_1).
+suitSeance(cm_reseau_3, cm_reseau_2).
+suitSeance(cm_reseau_4, cm_reseau_3).
+suitSeance(cm_reseau_5, cm_reseau_4).
+
+suitSeance(td_reseau_1_1, cm_reseau_1).
+suitSeance(td_reseau_1_2, cm_reseau_2).
+suitSeance(td_reseau_1_3, cm_reseau_3).
+suitSeance(td_reseau_1_4, cm_reseau_4).
+suitSeance(td_reseau_1_5, cm_reseau_5).
+
+suitSeance(td_reseau_2_1, cm_reseau_1).
+suitSeance(td_reseau_2_2, cm_reseau_2).
+suitSeance(td_reseau_2_3, cm_reseau_3).
+suitSeance(td_reseau_2_4, cm_reseau_4).
+suitSeance(td_reseau_2_5, cm_reseau_5).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Écriture dynamique de la base de donnée -------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+/**
+ * computeProfSeance(+P, +Seance)
+ *
+ * assert profSeance
+ *
+ * @arg P       Un enseignant ou une liste d'enseignants
+ * @arg Seance  Une séance
+ */
+computeProfSeance(P, Seance) :-
+    \+ is_list(P),
+    assertz(profSeance(P, Seance)).
+computeProfSeance([], _).
+computeProfSeance([P|Profs], Seance) :- % si plusieurs profs par séance
+    computeProfSeance(P, Seance),
+    computeProfSeance(Profs, Seance).
+
+/**
+ * computeSeance(+Nom, +Mat, +Profs, +Type, +Groupe, +S)
+ *
+ * @arg Nom     Nom de la séance
+ * @arg Mat     Matière
+ * @arg Profs   Enseignant ou liste d'enseignants
+ * @arg Type    Type de cours
+ * @arg Groupe
+ * @arg Ss      Listes d'id de séances
+ */
+computeSeance(Nom, Mat, Profs, Type, Groupe, [X]) :-
+    computeProfSeance(Profs, X),
+    assertz(groupeSeance(Groupe, X)),
+    assertz(seance(X, Type, Mat, Nom)).
+computeSeance(Nom, Mat, Profs, Type, Groupe, [X, Y|S]) :-
+    (suitSeance(Y, X, _, _); assertz(suitSeance(Y, X))),
+    computeSeance(Nom, Mat, Profs, Type, Groupe, [X]),
+    computeSeance(Nom, Mat, Profs, Type, Groupe, [Y|S]).
+
+% On génère la base de donnée dynamique des séances et des prédicats en lien
+:- forall(
+    seances(Nom, Mat, Prof, Type, Groupe, Ids),
+    (
+        computeSeance(Nom, Mat, Prof, Type, Groupe, Ids)
+    )
+).
